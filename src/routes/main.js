@@ -11,15 +11,16 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { CSSTransition, SwitchTransition } from "react-transition-group";
-import { Link } from "@mui/material";
-import { ReactComponent as Maple } from '../assets/ico-maple.svg';
+import { Link, SvgIcon } from "@mui/material";
+import { Image, Margin } from "@mui/icons-material";
+import {ReactComponent as MapleIcon} from '../assets/ico-maple.svg';
 
 function Copyright() {
     return (
         <Typography variant="body2" color="text.secondary" align="center" mt={10}>
             {'Copyright © '}
             <Link color="inherit" href="/">
-                N I C K G G
+                M A P L E Z Z A N G
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -28,7 +29,7 @@ function Copyright() {
 }
 
 function Main() {
-    const pages = ['고객정보', '예약목록', '검사완료'];
+    const pages = ['홈', '랭킹', '가이드', '커뮤니티'];
     const routes = ['list', 'reserveList', 'completeList'];
 
     const [anchorElNav, setAnchorElNav] = useState(null);
@@ -109,8 +110,8 @@ function Main() {
                                 textDecoration: 'none',
                             }}
                         >
-                            <Maple width="100" height="100" fill="orange"/>
-                            NICK
+
+                            메짱
                         </Button>
 
 
@@ -131,8 +132,9 @@ function Main() {
                                 textDecoration: 'none',
                             }}
                         >
-                            <Maple width="100" height="100" fill="orange"/>
-                            NICK
+                        {/* <SvgIcon component={MapleIcon} viewBox="0 0 24 24"/> */}
+                    <img src='ico-maple.svg' width={50} height={50} style={{marginRight:'1rem'}} />
+                        메짱
                         </Button>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page, index) => (

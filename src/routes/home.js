@@ -1,4 +1,4 @@
-import { Box, Container, TextField, styled } from "@mui/material"
+import { Box, Container, TextField, Typography, styled } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 
 const HomeTextField = styled(TextField)(({ theme }) => ({
@@ -38,32 +38,49 @@ function Home() {
             navigate('/detail/' + e.target.value)
         }
     }
-    return (<>
-        <Container sx={{ textAlign: 'center', px: {xs: 0} }}>
-            <Box component={'img'} src={process.env.PUBLIC_URL + '/artwork_115.jpg'} sx={(theme) => {
+    return (
+        <>
+
+            <Box className="content_bg" style={{ paddingLeft: 0, paddingRight: 0 }} sx={(theme) => {
                 return {
                     [theme.breakpoints.down('sm')]: {
-                        width: '100%',
                         height: '400px',
                         objectFit: 'cover'
                     },
                     [theme.breakpoints.up('sm')]: {
-                        width: '580px',
+                        height: '580px',
+                        objectFit: 'cover'
                     },
                     [theme.breakpoints.up('md')]: {
-                        width: '880px',
+                        height: '580px',
+                        objectFit: 'cover'
                     },
                     [theme.breakpoints.up('lg')]: {
-                        width: '1180px',
+                        height: '700px',                        
+                        objectFit: 'cover'
                     }
                 }
-            }} />
-            <HomeTextField fullWidth id="outlined-search" label="닉네임" type="search"
-                onKeyDown={(e) => {
-                    searchFieldKeyDown(e)
-                }} />
-        </Container>
-    </>)
+            }}>
+                <img src='bg/cut_i15523914217.png' class="bg" alt="background" loading="lazy" />
+            </Box>
+            <Container sx={{ textAlign: 'center', px: { xs: 0 } }} style={{
+                background: 'transparent',
+                backdropFilter: 'blur(8px)',
+                borderRadius: '10px',
+                paddingTop: '3rem'
+            }}>
+                <Box display="flex" alignItems="center" justifyContent="center">
+                    <img src='ico-maple.svg' width={50} height={50} style={{marginRight:'1rem'}} />
+                    <Typography variant="h4" color={"white"} display={"inline-block"}>MAEZZANG.GG</Typography>
+                </Box>
+
+                <HomeTextField fullWidth id="outlined-search" label="닉네임" type="search"
+                    onKeyDown={(e) => {
+                        searchFieldKeyDown(e)
+                    }} />
+            </Container>
+        </>
+    )
 }
 
 export default Home

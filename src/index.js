@@ -13,7 +13,7 @@ const theme = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: '#f9ba1b',
+      main: 'rgba(20,20,20,0.66)',
       contrastText: '#fafafa',
     },
     secondary: {
