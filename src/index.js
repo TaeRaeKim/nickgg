@@ -4,11 +4,68 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from './store'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { BrowserRouter } from 'react-router-dom';
 
+const theme = createTheme({
+  palette: {
+    type: 'light',
+    primary: {
+      main: '#f9ba1b',
+      contrastText: '#fafafa',
+    },
+    secondary: {
+      main: '#f50057',
+    },
+  },
+  typography: {
+    fontFamily: 'Maple',
+    subtitle1: {
+      fontSize: '1.5rem',
+    },
+    h5: {
+      fontSize: '1.7rem',
+    },
+    h6: {
+      fontSize: '1.5rem',
+    },
+    subtitle2: {
+      fontSize: '1.2rem',
+    },
+    body1: {
+      fontFamily: 'NotoSansKR',
+    },
+    body2: {
+      fontFamily: 'NotoSansKR',
+    },
+    button: {
+      fontSize: '1.2rem',
+    },
+    overline: {
+      fontFamily: 'NotoSansKR',
+    },
+    caption: {
+      fontFamily: 'NotoSansKR',
+    },
+  }
+});
+
+
+//Provider : store 사용을 위한
+// ThemeProvider : mui thema 적용을 위한
+// BrwserRouter : router dom을 사용하기 위한
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}> 
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 

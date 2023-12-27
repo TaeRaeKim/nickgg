@@ -1,3 +1,26 @@
+@font-face {
+  font-family: 'BMJUA';
+  src: url('./fonts/BMJUA.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'NotoSansKR';
+  src: url('./fonts/NotoSansKR.ttf') format('truetype'); 
+
+}@font-face {
+  font-family: 'MapleBold';
+  src: url('./fonts/Maplestory\ Bold.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'MapleLight';
+  src: url('./fonts/Maplestory\ Light.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'Maple';
+  src: url('./fonts/Maplestory\ Bold.ttf') format('truetype'); 
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
